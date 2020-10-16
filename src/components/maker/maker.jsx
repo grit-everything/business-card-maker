@@ -6,7 +6,43 @@ import Header from '../header/header';
 import styles from './maker.module.css';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
+import { useState } from 'react';
 const Maker = ({ authService }) => {
+  const [cards, setCards] = useState([
+    {
+      id: '1',
+      name: 'Jake',
+      company: 'DTL',
+      theme: 'dark',
+      title: 'Software Engineer',
+      email: 'gomgom3409@gmail.com',
+      message: 'grit is everything',
+      fileName: 'Jeong Cheol',
+      fileURL: null,
+    },
+    {
+      id: '2',
+      name: 'Jenny',
+      company: 'DTL',
+      theme: 'light',
+      title: 'Software Engineer',
+      email: 'gomgom3409@gmail.com',
+      message: 'grit is everything',
+      fileName: 'Jeong Cheol',
+      fileURL: '',
+    },
+    {
+      id: '3',
+      name: 'Leon',
+      company: 'DTL',
+      theme: 'colorful',
+      title: 'Software Engineer',
+      email: 'gomgom3409@gmail.com',
+      message: 'grit is everything',
+      fileName: 'Jeong Cheol',
+      fileURL: null,
+    },
+  ]);
   const history = useHistory();
   const onLogout = () => {
     authService.logout();
@@ -24,8 +60,8 @@ const Maker = ({ authService }) => {
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor />
-        <Preview />
+        <Editor cards={cards} />
+        <Preview cards={cards} />
       </div>
 
       <Footer />

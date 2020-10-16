@@ -4,7 +4,17 @@ import firebaseApp from './firebase';
 class AuthService {
   login(providerName) {
     const authProvider = new firebase.auth[`${providerName}AuthProvider`]();
+    /*
+    
+    객체 함수 호출 예제
+    "use strict";
+    var obj = {
+      Foo: function Foo() {}
+    };
+    new obj.Foo();
     return firebaseApp.auth().signInWithPopup(authProvider);
+    
+    */
   }
 
   logout() {
