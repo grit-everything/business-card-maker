@@ -8,6 +8,7 @@ const CardAddForm = ({ onAdd }) => {
   const nameRef = useRef();
   const companyRef = useRef();
   const themeRef = useRef();
+  const titleRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
   const formRef = useRef();
@@ -53,6 +54,7 @@ const CardAddForm = ({ onAdd }) => {
         <option value="colorful">colorful</option>
       </select>
       <input
+        ref={titleRef}
         className={styles.input} //
         type="text"
         name="title"
