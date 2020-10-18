@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './card_edit_form.module.css';
-import Button1 from '../button/button';
+import Button from '../button/button';
 import ImageFileInput from '../image_file_input/image_file_input';
 
 const CardEditForm = ({ card }) => {
   const { id, name, company, theme, title, email, message, fileName, fileURL } = card;
 
-  const onsubmit = () => {
+  const onsubmit = (e) => {
+    e.preventDefault();
     console.log('good');
   };
 
@@ -25,7 +26,7 @@ const CardEditForm = ({ card }) => {
       <div className={styles.fileInput}>
         <ImageFileInput />
       </div>
-      <Button1 name="Delete" onClick={onsubmit} />
+      <Button name="Delete" onClick={onsubmit} />
     </form>
   );
 };
