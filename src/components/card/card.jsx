@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './card.module.css';
 
-const Card = ({ card }) => {
+const Card = ({ card, image }) => {
   const DEFAULT_IMAGE = '/images/default_logo.png';
   const { id, name, company, theme, title, email, message, fileName, fileURL } = card;
   const url = fileURL || DEFAULT_IMAGE;

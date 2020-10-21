@@ -7,7 +7,7 @@ import styles from './maker.module.css';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 import { useState } from 'react';
-const Maker = ({ authService }) => {
+const Maker = ({ authService, FileInput }) => {
   const [cards, setCards] = useState({
     1: {
       id: '1',
@@ -78,12 +78,15 @@ const Maker = ({ authService }) => {
       <Header onLogout={onLogout} />
       <div className={styles.container}>
         <Editor
-          cards={cards} //
+          FileInput={FileInput} //
+          cards={cards}
           addCard={createOrUpdateCard}
           updateCard={createOrUpdateCard}
           deleteCard={deleteCard}
         />
-        <Preview cards={cards} />
+        <Preview
+          cards={cards} //
+        />
       </div>
 
       <Footer />
