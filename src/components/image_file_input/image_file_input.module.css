@@ -39,14 +39,11 @@
   border-radius: 50%;
   border: 3px solid makerLightGrey;
   border-top: 3px solid makerPink;
-  animation: spin 2s linear infinite;
+  animation: spin 1.5s linear infinite;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
